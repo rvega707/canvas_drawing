@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+
+<style type="text/css">
+	#myCanvas1 {
+		width: 300px;
+		height: 300px;
+		border: 1px black solid;
+		background: #f4f4f4;
+	}
+
+	#myCanvas2 {
+		width: 300px;
+		height: 300px;
+		border: 1px black solid;
+		background: #f4f4f4;
+	}
+
+	#myCanvas3 {
+		width: 300px;
+		height: 300px;
+		border: 1px black solid;
+		background: #f4f4f4;
+	}
+
+	#myCanvas4 {
+		width: 300px;
+		height: 300px;
+		border: 1px black solid;
+		background: #f4f4f4;
+	}
+
+	#myCanvas5 {
+		width: 300px;
+		height: 300px;
+		border: 1px black solid;
+		background: #f4f4f4;
+	}
+
+</style>
+
+</head>
+<body>
+<canvas id="myCanvas1"></canvas>
+<canvas id="myCanvas2"></canvas>
+<canvas id="myCanvas3"></canvas>
+<canvas id="myCanvas4"></canvas>
+<canvas id="myCanvas5"></canvas>
+
+<script type="text/javascript">
+	var c = document.getElementById("myCanvas1");
+	var ctx1 = c.getContext("2d");
+
+	var c = document.getElementById("myCanvas2");
+	var ctx2 = c.getContext("2d");
+
+	var c = document.getElementById("myCanvas3");
+	var ctx3 = c.getContext("2d");
+
+	var c = document.getElementById("myCanvas4");
+	var ctx4 = c.getContext("2d");
+
+	var c = document.getElementById("myCanvas5");
+	var ctx5 = c.getContext("2d");
+
+	// Rectangle 
+	ctx1.fillStyle = "green";
+	ctx1.fillRect(10,40, 180, 50);
+
+
+	// Line
+	ctx2.moveTo(0,0);
+	ctx2.lineTo(150, 10);
+	ctx2.stroke();
+
+	// Circle 
+	ctx3.beginPath();
+	ctx3.arc(100,70,40,0,2*Math.PI);
+	ctx3.fillStyle = "green";
+	ctx3.fill();
+	ctx3.lineWidth = 4;
+	ctx3.strokeStyle = "red";
+	ctx3.stroke();
+
+	// Text
+	ctx4.font = "50px Arial";
+	ctx4.strokeStyle = "red";
+	ctx4.strokeText("Hello World", 20, 50);
+	
+
+	//Gradient
+	var grd = ctx5.createLinearGradient(0,0,100,0);
+	grd.addColorStop(0, "blue");
+	grd.addColorStop(1, "white");
+	ctx5.fillStyle = grd;
+	ctx5.fillRect(10,10, 260, 100);
+</script>
+</body>
+</html>
